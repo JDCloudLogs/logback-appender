@@ -1,0 +1,58 @@
+<configuration>
+    <!--为了防止进程退出时，内存中的数据丢失，请加上此选项-->
+    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
+    <appender name="JDCloudAppender" class="com.jdcloud.logs.JDCloudLogbackAppender">
+        <!-- 必选配置项start -->
+        <!-- 认证标识 -->
+        <accessKeyId></accessKeyId>
+        <!-- 认证秘钥 -->
+        <secretAccessKey></secretAccessKey>
+        <!-- 地域标识 -->
+        <regionId></regionId>
+        <!-- 日志发送地址 -->
+        <endpoint></endpoint>
+        <!-- 日志主题 -->
+        <logTopic></logTopic>
+        <!-- 必选配置项end -->
+
+        <!-- 可选配置项start -->
+        <!-- 日志来源，默认为机器ip -->
+        <source></source>
+        <!-- 日志文件名 -->
+        <fileName></fileName>
+        <!-- 日志缓存的内存占用字节数上限，默认为100M -->
+        <totalSizeInBytes>104857600</totalSizeInBytes>
+        <!-- 日志缓存达到上限后，获取可用内存的最大阻塞等待时间，默认为0，表示不等待。等待超时后丢弃日志，由于会阻塞日志线程，建议设置为0 -->
+        <maxBlockMillis>0</maxBlockMillis>
+        <!-- 日志发送线程数，默认为可用处理器个数 -->
+        <sendThreads>4</sendThreads>
+        <!-- 每批次发送的日志数，默认为1024，最大不能超过32768 -->
+        <batchSize>1024</batchSize>
+        <!-- 每批次发送的日志字节数，默认2MB，最大不能超过4MB -->
+        <batchSizeInBytes>2097152</batchSizeInBytes>
+        <!-- 批次发送时间间隔毫秒数，默认为2秒，表示每隔2秒发送一个批次日志，最小不少于100毫秒 -->
+        <batchMillis>2000</batchMillis>
+        <!-- 发送失败后重试次数，0为不重试 -->
+        <retries>10</retries>
+        <!-- 发送失败后首次重试时间毫秒数 -->
+        <initRetryBackoffMillis>100</initRetryBackoffMillis>
+        <!-- 发送失败后最大退避时间毫秒数，默认为50秒 -->
+        <maxRetryBackoffMillis>50000</maxRetryBackoffMillis>
+        <!-- 自定义日志字段，格式为：key=value -->
+        <customLogProperty>customKey1=value1</customLogProperty>
+        <customLogProperty>customKey2=value2</customLogProperty>
+        <!-- 可选配置项end -->
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="JDCloudAppender"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
