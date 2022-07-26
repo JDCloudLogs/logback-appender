@@ -54,7 +54,11 @@ logbak.xml 配置JDCloudLogbackAppender，例如：
         <secretAccessKey>${secretAccessKey}</secretAccessKey>
         <!-- 地域标识 -->
         <regionId>${regionId}</regionId>
-        <!-- 日志发送地址 -->
+        <!-- 日志发送地址，可选值： -->
+        <!-- 华北-北京：logs.internal.cn-north-1.jdcloud-api.com -->
+        <!-- 华南-广州：logs.internal.cn-south-1.jdcloud-api.com -->
+        <!-- 华东-宿迁：logs.internal.cn-east-1.jdcloud-api.com -->
+        <!-- 华东-上海：logs.internal.cn-east-2.jdcloud-api.com -->
         <endpoint>${endpoint}</endpoint>
         <!-- 日志主题 -->
         <logTopic>${logTopic}</logTopic>
