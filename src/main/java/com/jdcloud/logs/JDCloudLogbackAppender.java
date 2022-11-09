@@ -88,7 +88,7 @@ public class JDCloudLogbackAppender<E> extends UnsynchronizedAppenderBase<E> {
         if (formattedMessage.length() > MAX_MESSAGE_SIZE) {
             formattedMessage = formattedMessage.substring(0, MAX_MESSAGE_SIZE) + "..";
         }
-        logItem.addContent("message", formattedMessage);
+        logItem.addContent("content", formattedMessage);
 
         IThrowableProxy iThrowableProxy = logEvent.getThrowableProxy();
         if (iThrowableProxy != null) {
