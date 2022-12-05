@@ -23,7 +23,7 @@ customKey : xxx
 
 ## 版本支持
 * logback 1.2.3
-* aliyun-log-producer 0.1.0
+* aliyun-log-producer 0.2.0
 * protobuf-java 2.5.0
 
 
@@ -35,7 +35,7 @@ customKey : xxx
 <dependency>
     <groupId>com.jdcloud.logs</groupId>
     <artifactId>logback-appender</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
