@@ -6,7 +6,7 @@
 
     <groupId>com.jdcloud.logs</groupId>
     <artifactId>logback-appender</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 
     <name>JDCloud Logback Appender</name>
     <url>http://jdcloud.com</url>
@@ -45,7 +45,7 @@
     </distributionManagement>
 
     <properties>
-        <log-producer.version>0.1.0</log-producer.version>
+        <log-producer.version>0.2.0</log-producer.version>
         <logback.version>1.2.3</logback.version>
         <slf4j.version>1.7.25</slf4j.version>
         <junit.version>4.12</junit.version>
